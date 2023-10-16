@@ -1,0 +1,71 @@
+
+input{
+    padding: 35px 50px;
+    border:solid 2.5px;
+    border-radius: 50px;
+    font-size: 15px;
+    position: absolute;
+    
+}
+
+select{
+    position: relative;
+    appearance: none;
+    border: none;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    font-size: 12px;
+    padding: 10px;
+    margin-left: 200px;
+    margin-top:10px ;
+    background-color: rgba(189, 156, 219, 0.637);
+}
+select:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.everything{
+    position: absolute;
+    top: 100;
+}
+.convertDiv{
+    margin-bottom: 50px;
+
+    
+}
+.convertedDiv{
+    margin-bottom: 40px;
+    margin-left: 80px;
+}
+div{
+    display: inline-block;
+    
+}
+button{
+    display: block;
+    padding: 15px 20px;
+    border:solid 2.5px;
+    border-radius: 25px;
+    font-size: 15px;
+    position: absolute;
+    margin-left: 270px;
+    font-size: 20px;
+    border: none;
+    background-color: rgba(189, 156, 219, 0.637);
+}
+button:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+p{
+    display: block;
+    margin-top: 80px;
+    margin-left:260px;
+}
+.everything{
+    margin-left: 280px;
+    top: 30%;
+}

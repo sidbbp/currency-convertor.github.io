@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="everything">
+        <div class="convertDiv">
+            <input type="number" id="amount">
+            <select id="convertFrom"></select>
+        </div>
+        <div class="convertedDiv">
+            <input type="number" id="result" disabled>
+            <select id="convertTo"></select>
+        </div>
+        <button onclick="convertCurrency()">convert</button>
+        <p id="conversionRate"></p>
+    
+    </div>
+    <script>
+        const convertFrom = document.getElementById("convertFrom");
+        const convertTo = document.getElementById("convertTo");
+        const amount = document.getElementById("amount");
+        const result = document.getElementById("result");
+        const conversionRate = document.getElementById("conversionRate");
+
+        const currencies = {
+            USD: 1,
+            INR: 74.94,  
+            CND: 1.27,   
+            YEN: 111.28, 
+            YUAN: 6.45,  
+            DONG: 22745, 
+            POUND: 0.73, 
+            EURO: 0.95,
+            RIYAL: 3.75    
+        };
+
+        for (let currency in currencies) {
+            const optionFrom = document.createElement("option");
+            optionFrom.value = currency;
+            optionFrom.textContent = currency;
+
+            const optionTo = document.createElement("option");
+            optionTo.value = currency;
+            optionTo.textContent = currency;
+
+            convertFrom.appendChild(optionFrom);
+            convertTo.appendChild(optionTo);
+        }
+
+        function convertCurrency() {
+            const fromCurrency = convertFrom.value;
+            const toCurrency = convertTo.value;
+            const rate = currencies[toCurrency] / currencies[fromCurrency];
+            const convertedAmount = amount.value * rate;
+
+            result.value = convertedAmount.toFixed(2);
+            conversionRate.textContent = `1 ${fromCurrency} = ${rate.toFixed(2)} ${toCurrency}`;
+        }
+    </script>
+</body>
+</html>
